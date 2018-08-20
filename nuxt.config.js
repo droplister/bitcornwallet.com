@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'bitcornwallet.com',
+    title: 'Bitcorn Wallet',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Bitcorn Wallet' }
+      { hid: 'description', name: 'description', content: 'A web wallet that allows you to manage your Bitcorn card collection.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -21,6 +21,7 @@ module.exports = {
   ** Loaded modules
   */
   modules: [
+    'bitpay/bitcore-lib',
     'bootstrap-vue/nuxt',
   ],
   /*
@@ -42,4 +43,3 @@ module.exports = {
     }
   }
 }
-

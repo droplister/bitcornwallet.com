@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "bitcore-lib": "^0.15.0",
     "bootstrap-vue": "^2.0.0-rc.11",
     "nuxt": "^1.0.0"
   },
