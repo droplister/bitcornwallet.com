@@ -18,16 +18,42 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
-  ** Loaded modules
+  ** App modules
   */
   modules: [
-    'bitpay/bitcore-lib',
+    '@nuxtjs/auth',
+    '@nuxtjs/font-awesome',
     'bootstrap-vue/nuxt',
   ],
+  /*
+  ** Auth options
+  */
+  auth: {
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/',
+      home: '/farm'
+    },
+    strategies: {
+      local: false,
+      mnemonic: { _scheme: '~/schemes/MnemonicScheme.js' }
+    }
+  },
+  /*
+  ** App router
+  */
+  router: {
+    middleware: ['auth']
+  },
   /*
   ** Build configuration
   */
   build: {
+    /*
+    ** Code Vendors
+     */
+    vendor: ['bitcore-lib', 'bitcore-mnemonic'],
     /*
     ** Run ESLint on save
     */
