@@ -33,7 +33,7 @@ module.exports = {
       login: '/',
       logout: '/',
       callback: '/',
-      home: '/farm'
+      home: '/wallet'
     },
     strategies: {
       local: false,

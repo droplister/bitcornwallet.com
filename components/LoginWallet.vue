@@ -34,17 +34,6 @@ export default {
       mnemonic: ''
     }
   },
-  computed: {
-    redirect() {
-      return (
-        this.$route.query.redirect &&
-        decodeURIComponent(this.$route.query.redirect)
-      )
-    },
-    isCallback() {
-      return Boolean(this.$route.query.callback)
-    }
-  },
   methods: {
     async login() {
       this.error = null
