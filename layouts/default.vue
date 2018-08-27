@@ -7,7 +7,7 @@
           <a class="p-2 text-dark" href="#">Wallet</a>
           <a class="p-2 text-dark" href="#">Market</a>
           <a class="p-2 text-dark" href="#">Voting</a>
-          <a class="p-2 text-dark" href="#">Logout</a>
+          <a class="p-2 text-dark" href="#" @click="logout">Logout</a>
         </nav>
       </template>
       <a class="btn btn-outline-primary" href="https://t.me/bitcorns" target="_blank">Support</a>
@@ -17,30 +17,41 @@
 
   </div>
 </template>
+<script>
 
-<style>
-html {
-  font-size: 14px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.welcome-header {
-  max-width: 700px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+export default {
+  methods: {
+    async logout() {
+      return this.$auth.logout();
+    }
   }
 }
+</script>
+<style>
+  html {
+    font-size: 14px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .welcome-header {
+    max-width: 700px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
 </style>
