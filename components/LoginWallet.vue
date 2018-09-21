@@ -27,23 +27,14 @@
 <script>
 
 export default {
-  data () {
+  data() {
     return {
       mnemonic: ''
     }
   },
   methods: {
-    async login() {
-      this.error = null
-      return this.$auth
-      .loginWith('mnemonic', {
-        data: {
-          mnemonic: this.mnemonic,
-        }
-      })
-      .catch(e => {
-        this.error = e + ''
-      })
+    login() {
+      return ''
     }
   }
 }
