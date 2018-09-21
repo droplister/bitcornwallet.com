@@ -21,31 +21,16 @@ module.exports = {
   ** App modules
   */
   modules: [
-    '@nuxtjs/auth',
     '@nuxtjs/font-awesome',
     'bootstrap-vue/nuxt',
   ],
   /*
-  ** Auth options
+  ** Plugins
   */
-  auth: {
-    redirect: {
-      login: '/',
-      logout: '/',
-      callback: '/',
-      home: '/wallet'
-    },
-    strategies: {
-      local: false,
-      mnemonic: { _scheme: '~/schemes/MnemonicScheme.js' }
-    }
-  },
-  /*
-  ** App router
-  */
-  router: {
-    middleware: ['auth']
-  },
+  plugins: [
+    { src: '~plugins/localStorage.js', ssr: false },
+    { src: '~plugins/sessionStorage.js', ssr: false }
+  ],
   /*
   ** Build configuration
   */

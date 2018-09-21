@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <div class="card-deck mb-3">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
@@ -22,7 +21,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 

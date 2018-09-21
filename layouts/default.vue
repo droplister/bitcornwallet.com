@@ -2,12 +2,12 @@
   <div>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h5 class="my-0 mr-md-auto font-weight-normal">&#x1f33d; Bitcorn Wallet</h5>
-      <template v-if="$auth.$state.loggedIn">
+      <template v-if="$store.state.bitcorn_session && store.state.bitcorn_session.mnemonic">
         <nav class="my-2 my-md-0 mr-md-3">
           <a class="p-2 text-dark" href="/wallet">Wallet</a>
           <a class="p-2 text-dark" href="/market">Market</a>
           <a class="p-2 text-dark" href="/voting">Voting</a>
-          <a class="p-2 text-dark" href="#logout" @click="$auth.logout()">Logout</a>
+          <a class="p-2 text-dark" href="#logout" @click="logout">Logout</a>
         </nav>
       </template>
       <a class="btn btn-outline-primary" href="https://t.me/bitcorns" target="_blank">Support</a>
@@ -17,11 +17,19 @@
 
   </div>
 </template>
+
 <script>
 
-export default { }
+export default {
+  methods: {
+    async logout() {
+      return ''
+    }
+  }
+}
 
 </script>
+
 <style>
   html {
     font-size: 14px;

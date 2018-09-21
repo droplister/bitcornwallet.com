@@ -12,6 +12,7 @@
         </div>
       </div>
     </div>
+    <pre>state = {{ $store.state }}</pre>
   </div>
 </template>
 
@@ -20,7 +21,7 @@ import CreateWallet from '~/components/CreateWallet.vue'
 import LoginWallet from '~/components/LoginWallet.vue'
 
 export default {
-  auth: false,
+  middleware: 'guest',
   components: {
     CreateWallet,
     LoginWallet
