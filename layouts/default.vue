@@ -1,16 +1,14 @@
 <template>
   <div>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal">&#x1f33d; Bitcorn Wallet</h5>
-      <template v-if="$store.getItem('bitcorn_session.plaintext.mnemonic')">
+      <h5 class="my-0 mr-md-auto font-weight-normal">&#x1f33d; <a href="/" class="text-dark">Bitcorn Wallet</a></h5>
+      <template v-if="$store.state.encrypted">
         <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" href="/wallet">Wallet</a>
-          <a class="p-2 text-dark" href="/market">Market</a>
-          <a class="p-2 text-dark" href="/voting">Voting</a>
-          <a class="p-2 text-dark" href="#logout" @click="logout">Logout</a>
+          <a v-if="$store.state.plaintext" class="p-2 text-dark" href="/unlock" @click="logout"><i class="fa fa-lock"></i> Lock</a>
+          <a v-if="!$store.state.plaintext" class="p-2 text-dark" href="/" @click="reset">Reset</a>
         </nav>
       </template>
-      <a class="btn btn-outline-primary" href="https://t.me/bitcorns" target="_blank">Support</a>
+      <a class="btn btn-outline-primary" href="https://t.me/bitcorns" target="_blank"><i class="fa fa-support"></i> Support</a>
     </div>
 
     <nuxt/>
@@ -22,8 +20,11 @@
 
 export default {
   methods: {
-    async logout() {
-      return ''
+    logout() {
+      this.$store.commit('logout')
+    },
+    reset() {
+      this.$store.commit('reset')
     }
   }
 }

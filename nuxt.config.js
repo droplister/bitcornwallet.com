@@ -38,7 +38,7 @@ module.exports = {
     /*
     ** Code Vendors
      */
-    vendor: ['bitcore-lib', 'bitcore-mnemonic'],
+    vendor: ['bitcore-lib', 'bitcore-mnemonic', 'crypto-js'],
     /*
     ** Run ESLint on save
     */

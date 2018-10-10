@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Button -->
-    <b-btn v-b-modal.createWallet size="lg" class="mt-2 mb-5" variant="outline-success" @click="generateMnemonic">
+    <b-btn v-b-modal.createWallet size="lg" class="mt-2 mb-4" variant="outline-success" @click="createMnemonic">
       <i class="fa fa-id-card-o"></i> Create New Wallet
     </b-btn>
     <!-- Modal -->
@@ -9,11 +9,11 @@
       <p class="text-left">
         Passphrase generated: 
         <i class="fa fa-question-circle" v-b-tooltip title="Protect this password. It can be used to steal your funds!"></i>
-        <a href="#" @click="generateMnemonic" class="ml-1">(refresh)</a>
+        <a href="#" @click="createMnemonic" class="ml-1">(refresh)</a>
       </p>
       <div class="row">
         <div class="col-md-10">
-          <input ref="randomMnemonic" type="text" class="form-control mb-3" v-model="randomMnemonic">
+          <input ref="rmnemonic" type="text" class="form-control mb-3" v-model="rmnemonic">
         </div>
         <div class="col-md-2">
           <b-button class="mb-3" variant="outline-secondary" block v-b-tooltip title="Copy" @click="copyToClipboard">
@@ -35,17 +35,17 @@ import { mapState } from 'vuex'
 
 export default {
   fetch({ store }) {
-    store.commit('generateMnemonic')
+    store.commit('createMnemonic')
   },
   computed: mapState([
-    'randomMnemonic'
+    'rmnemonic'
   ]),
   methods: {
-    generateMnemonic() {
-      this.$store.commit('generateMnemonic')
+    createMnemonic() {
+      this.$store.commit('createMnemonic')
     },
     copyToClipboard() {
-      this.$refs.randomMnemonic.select()
+      this.$refs.rmnemonic.select()
       document.execCommand('copy')
     },
   }

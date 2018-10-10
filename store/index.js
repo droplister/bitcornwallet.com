@@ -1,11 +1,15 @@
 import Vuex from 'vuex'
+import actions from './actions'
 import mutations from './mutations'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      randomMnemonic: '',
+      encrypted: null,
+      plaintext: null,
+      rmnemonic: null,
     },
+    actions,
     mutations,
   })
 }

@@ -21,7 +21,6 @@ import CreateWallet from '~/components/CreateWallet.vue'
 import LoginWallet from '~/components/LoginWallet.vue'
 
 export default {
-  middleware: 'guest',
   components: {
     CreateWallet,
     LoginWallet

@@ -1,12 +1,10 @@
 <template>
   <div>
-    COMING SOON
+    <pre>state = {{ $store.state }}</pre>
   </div>
 </template>
 
 <script>
-
 export default {
-  middleware: 'auth',
 }
 </script>

@@ -8,7 +8,6 @@ export default ({ store, isHMR }) => {
       key: 'bitcorn_session',
       paths: [
         'plaintext',
-        'plaintext.mnemonic',
       ],
       storage: window.sessionStorage,
     })(store)

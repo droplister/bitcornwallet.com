@@ -8,7 +8,6 @@ export default ({ store, isHMR }) => {
       key: 'bitcorn_storage',
       paths: [
         'encrypted',
-        'encrypted.mnemonic',
       ]
     })(store)
   })
